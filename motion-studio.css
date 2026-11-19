@@ -1,0 +1,31 @@
+/* Opt-in homepage preview. The original presentation is unchanged without ?motion=studio. */
+.motion-studio .studio-progress{position:fixed;inset:0 0 auto;z-index:10;height:3px;background:linear-gradient(90deg,var(--sea),var(--sun));pointer-events:none;transform:scaleX(var(--page-progress,0));transform-origin:left}
+.motion-studio .hero h1>span{overflow:hidden;overflow:clip;padding-bottom:.05em;margin-bottom:-.05em}
+.motion-studio .studio-hero-line{display:block}
+.motion-studio.studio-entry .studio-hero-line{animation:studio-line-in 1.03s cubic-bezier(.2,.8,.2,1) 1.54s both}
+.motion-studio.studio-entry .hero h1>span:nth-child(2) .studio-hero-line{animation-delay:1.67s}
+.motion-studio.studio-entry .hero-copy>.label,.motion-studio.studio-entry .hero-intro,.motion-studio.studio-entry .hero-copy>.solid-link{animation:studio-details-in .76s cubic-bezier(.2,.7,.26,1) 1.63s both}
+.motion-studio.studio-entry .hero-intro{animation-delay:1.87s}
+.motion-studio.studio-entry .hero-copy>.solid-link{animation-delay:1.97s}
+.motion-studio.studio-entry:has(:focus-visible) :is(.studio-hero-line,.hero-copy>.label,.hero-intro,.hero-copy>.solid-link){animation:none}
+.motion-studio .sun{translate:0 var(--sun-shift,0px)}
+.motion-studio .reflection{translate:var(--reflect-shift,0px) 0}
+.motion-studio .business-card{display:flex;flex-direction:column}
+.motion-studio .business-card .arrow-link{align-self:flex-start}
+.studio-card-photo{overflow:hidden;position:relative;margin-top:clamp(20px,3vw,35px);aspect-ratio:2.5;background:var(--warm)}
+.studio-card-image{position:absolute;inset:-15px 0;width:100%;height:calc(100% + 30px);object-fit:cover;transform:translateY(var(--photo-shift,0px));transition:scale .65s cubic-bezier(.2,.72,.25,1)}
+.motion-studio .business-card:is(:hover,:focus-within) .studio-card-image{scale:1.06}
+.motion-studio .business-card .arrow-link span{transition:transform .3s ease}
+.motion-studio .business-card .arrow-link:is(:hover,:focus-visible) span{transform:translate(3px,-3px)}
+.studio-rail{overflow:hidden;overflow:clip;background:var(--ink);color:var(--sand);padding:clamp(9px,1.5vw,23px) 0;border-block:1px solid var(--ink)}
+.studio-track{display:flex;gap:clamp(16px,3vw,52px);align-items:center;width:max-content;transform:translateX(var(--rail-shift,-12px))}
+.studio-rail-word{font:700 clamp(36px,8vw,108px)/1.1 var(--latin);letter-spacing:.045em;white-space:nowrap}
+.studio-rail-dot{width:.48em;height:.48em;font-size:clamp(36px,8vw,108px);border-radius:50%;background:var(--sun);flex:none}
+@keyframes studio-line-in{from{transform:translateY(112%)}to{transform:translateY(0)}}
+@keyframes studio-details-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:690px){.studio-card-photo{aspect-ratio:1.95}}
+@media(prefers-reduced-motion:reduce){
+  .motion-studio .studio-progress{display:none}
+  .motion-studio :is(.studio-track,.studio-card-image){transform:none;scale:1}
+  .motion-studio :is(.sun,.reflection){translate:none}
+}

@@ -1,0 +1,19 @@
+/* Homepage opening only. The site below keeps its original content and styling. */
+.tks-opening{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:#080d0c;color:#fcf9f1;pointer-events:none;clip-path:inset(0);animation:tks-opening-exit 1.95s both}
+.tks-opening-lockup{width:min(67%,260px);text-align:center;animation:tks-opening-mark 1.95s both}
+.tks-opening-word{margin-right:-.16em;font:700 clamp(32px,7.5vw,64px)/1.13 var(--font);letter-spacing:.16em;white-space:nowrap}
+.tks-opening-track{height:1px;margin:18px auto 0;background:#dceee34a;overflow:hidden;width:72%}
+.tks-opening-track i{display:block;height:100%;background:linear-gradient(90deg,var(--sea) 0 87%,var(--sun) 87%);transform-origin:left;animation:tks-opening-fill 1.05s cubic-bezier(.26,.66,.26,1) .18s both}
+@keyframes tks-opening-fill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes tks-opening-mark{0%{opacity:0;transform:translateY(8px)}23%,63%{opacity:1;transform:translateY(0)}77%,100%{opacity:0;transform:translateY(-8px)}}
+@keyframes tks-opening-exit{0%,68%{clip-path:inset(0);visibility:visible;animation-timing-function:cubic-bezier(.66,.05,.22,1)}99%{visibility:visible}100%{clip-path:inset(0 0 100% 0);visibility:hidden}}
+/* Let the opening reveal the sunrise before its movement is underway. */
+.sun{animation-delay:1.72s}
+.water i:nth-child(1){animation-delay:1.68s}
+.water i:nth-child(2){animation-delay:1.76s}
+.water i:nth-child(3){animation-delay:1.82s}
+.water i:nth-child(4){animation-delay:1.87s}
+.water i:nth-child(5){animation-delay:1.94s}
+.reflection{animation-delay:2.32s}
+body:has(:focus-visible) .tks-opening,body:has(:target) .tks-opening{display:none}
+@media(prefers-reduced-motion:reduce){.tks-opening{display:none}}

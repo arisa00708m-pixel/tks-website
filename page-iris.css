@@ -1,0 +1,24 @@
+/* Scale one physical window. Its rim, paper surround and cameo occupy the same plane. */
+.page-iris{display:none}
+@media(prefers-reduced-motion:no-preference){
+  .page-iris{--portal-size:clamp(172px,30vmin,260px);--portal-y:42%;--iris-time:2.28s;--zoom-end:24;position:fixed;inset:0;display:block;z-index:20;isolation:isolate;pointer-events:none;overflow:hidden;animation:iris-stage var(--iris-time) linear both}
+  @supports(transform:scale(tan(atan2(2px,1px)))){
+    .page-iris{--zoom-end:tan(atan2(calc(hypot(50vw,58vh) + 28px),calc(var(--portal-size) / 2)))}
+  }
+  .iris-window{position:absolute;top:var(--portal-y);left:50%;translate:-50% -50%;width:var(--portal-size);height:var(--portal-size);box-sizing:border-box;border:3px solid #56877d;box-shadow:0 0 0 1px #739d92,0 0 0 145vmax #f7f2e8;border-radius:50%;overflow:hidden;animation:iris-camera var(--iris-time) both}
+  .iris-tanpopo{position:absolute;inset:auto 12% -3%;width:76%;height:auto;animation:iris-pup var(--iris-time) both}
+  body:has(.skip:focus) .page-iris{display:none}
+  @keyframes iris-camera{
+    0%{transform:scale(.72);animation-timing-function:cubic-bezier(.18,.62,.32,1)}
+    15%,43%{transform:scale(1)}
+    43%{animation-timing-function:cubic-bezier(.51,.01,.35,1)}
+    97%,100%{transform:scale(var(--zoom-end))}
+  }
+  @keyframes iris-pup{
+    0%,9%{transform:translateY(108%) rotate(-7deg);animation-timing-function:cubic-bezier(.19,.66,.31,1.13)}
+    25%{transform:translateY(-4%) rotate(-6deg)}
+    32%,48%{transform:translateY(0) rotate(-4deg);animation-timing-function:cubic-bezier(.5,.02,.35,1)}
+    78%,100%{transform:translateY(116%) rotate(-3deg)}
+  }
+  @keyframes iris-stage{0%,99%{visibility:visible}100%{visibility:hidden}}
+}

@@ -1,0 +1,10 @@
+<svg class="iris-tanpopo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 150" focusable="false">
+  <path fill="#fffefe" stroke="#173b39" stroke-width="3.1" stroke-linejoin="round" d="M52 139c-4-17 1-31 16-40h46c13 11 19 26 15 42z"/>
+  <path fill="#fffefe" stroke="#173b39" stroke-width="3.1" stroke-linejoin="round" d="M49 66C41 50 36 25 42 13c3-6 10-7 17-1 10 8 19 23 22 39a55 55 0 0 1 22 0c3-16 10-32 22-41 8-5 15-3 17 4 4 13-2 37-10 50 8 11 13 25 9 38-5 18-23 29-48 29-26 0-45-10-50-28-4-12-1-25 6-37Z"/>
+  <path fill="#e7b9af" d="M53 55c-5-13-8-27-5-36 8 5 16 19 19 32zm68-4c4-15 10-26 17-32 1 12-3 25-8 35z"/>
+  <ellipse cx="103" cy="77" rx="3.5" ry="4.2" fill="#173b39"/>
+  <ellipse cx="70" cy="77" rx="3.5" ry="4.2" fill="#173b39"/>
+  <path fill="#f4efed" stroke="#173b39" stroke-width="2.1" d="M80 90q10-6 20 0 12-2 16 7 1 12-15 13l-11-3-11 3q-14-1-14-11 3-10 15-9z"/>
+  <path fill="#173b39" d="M84 88q7-3 14 0 1 4-7 7-8-3-7-7z"/>
+  <path d="M66 128q24 13 55-1" stroke="#d28a60" stroke-width="4" fill="none" stroke-linecap="round"/>
+</svg>
